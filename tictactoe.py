@@ -27,7 +27,39 @@ def write():
         for j in range(3):
             print([Board[i, j]], end="")
         print()
+        
+def win():
+    if Board[0][0] == Board[0][1] == Board[0][2] == "X":
+        print ("You win!")
+    elif Board[1][0] == Board[1][1] == Board[1][2] == "X":
+        print ("You win!")
+    elif Board[2][0] == Board[2][1] == Board[2][2] == "X":
+        print ("You win!")
+    elif Board[2][0] == Board[2][1] == Board[2][2] == "X":
+        print ("You win!")
+    elif Board[0][0] == Board[1][0] == Board[2][0] == "X":
+        print ("You win!")
+    elif Board[0][0] == Board[1][1] == Board[2][2] == "X":
+        print ("You win!")
+    elif Board[0][2] == Board[1][1] == Board[2][0] == "X":
+        print ("You win!")
 
+def loss():
+    if Board[0][0] == Board[0][1] == Board[0][2] == "O":
+        print ("You lose!")
+    elif Board[1][0] == Board[1][1] == Board[1][2] == "O":
+        print ("You lose!")
+    elif Board[2][0] == Board[2][1] == Board[2][2] == "O":
+        print ("You lose!")
+    elif Board[2][0] == Board[2][1] == Board[2][2] == "O":
+        print ("You lose!")
+    elif Board[0][0] == Board[1][0] == Board[2][0] == "O":
+        print ("You lose!")
+    elif Board[0][0] == Board[1][1] == Board[2][2] == "O":
+        print ("You lose!")
+    elif Board[0][2] == Board[1][1] == Board[2][0] == "O":
+        print ("You lose!")
+    
 while True:
     choice = int(input("Choose a number: "))
     if choice == 1:
@@ -48,6 +80,7 @@ while True:
         Board[2][1] = "X"
     elif choice == 9:
         Board[2][2] = "X"
+    win()
 
     
     oponents_turn_choice = oponents_turn()
@@ -70,5 +103,7 @@ while True:
         Board[2][1] = "O"
     elif oponents_turn_choice == "9":
         Board[2][2] = "O"
+    loss()
 
     write()
+    
