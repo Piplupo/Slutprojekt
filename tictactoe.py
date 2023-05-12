@@ -35,9 +35,11 @@ def win():
         print ("You win!")
     elif Board[2][0] == Board[2][1] == Board[2][2] == "X":
         print ("You win!")
-    elif Board[2][0] == Board[2][1] == Board[2][2] == "X":
-        print ("You win!")
     elif Board[0][0] == Board[1][0] == Board[2][0] == "X":
+        print ("You win!")
+    elif Board[0][1] == Board[1][1] == Board[2][1] == "X":
+        print ("You win!")
+    elif Board[0][2] == Board[1][2] == Board[2][2] == "X":
         print ("You win!")
     elif Board[0][0] == Board[1][1] == Board[2][2] == "X":
         print ("You win!")
@@ -51,14 +53,17 @@ def loss():
         print ("You lose!")
     elif Board[2][0] == Board[2][1] == Board[2][2] == "O":
         print ("You lose!")
-    elif Board[2][0] == Board[2][1] == Board[2][2] == "O":
-        print ("You lose!")
     elif Board[0][0] == Board[1][0] == Board[2][0] == "O":
+        print ("You lose!")
+    elif Board[0][1] == Board[1][1] == Board[2][1] == "O":
+        print ("You lose!")
+    elif Board[0][2] == Board[1][2] == Board[2][2] == "O":
         print ("You lose!")
     elif Board[0][0] == Board[1][1] == Board[2][2] == "O":
         print ("You lose!")
     elif Board[0][2] == Board[1][1] == Board[2][0] == "O":
         print ("You lose!")
+    
     
 while True:
     choice = int(input("Choose a number: "))
