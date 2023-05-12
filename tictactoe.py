@@ -31,38 +31,56 @@ def write():
 def win():
     if Board[0][0] == Board[0][1] == Board[0][2] == "X":
         print ("You win!")
+        return True
     elif Board[1][0] == Board[1][1] == Board[1][2] == "X":
         print ("You win!")
+        return True
     elif Board[2][0] == Board[2][1] == Board[2][2] == "X":
         print ("You win!")
+        return True
     elif Board[0][0] == Board[1][0] == Board[2][0] == "X":
         print ("You win!")
+        return True
     elif Board[0][1] == Board[1][1] == Board[2][1] == "X":
         print ("You win!")
+        return True
     elif Board[0][2] == Board[1][2] == Board[2][2] == "X":
         print ("You win!")
+        return True
     elif Board[0][0] == Board[1][1] == Board[2][2] == "X":
         print ("You win!")
+        return True
     elif Board[0][2] == Board[1][1] == Board[2][0] == "X":
         print ("You win!")
+        return True
+    return False
 
 def loss():
     if Board[0][0] == Board[0][1] == Board[0][2] == "O":
         print ("You lose!")
+        return True
     elif Board[1][0] == Board[1][1] == Board[1][2] == "O":
         print ("You lose!")
+        return True
     elif Board[2][0] == Board[2][1] == Board[2][2] == "O":
         print ("You lose!")
+        return True
     elif Board[0][0] == Board[1][0] == Board[2][0] == "O":
         print ("You lose!")
+        return True
     elif Board[0][1] == Board[1][1] == Board[2][1] == "O":
         print ("You lose!")
+        return True
     elif Board[0][2] == Board[1][2] == Board[2][2] == "O":
         print ("You lose!")
+        return True
     elif Board[0][0] == Board[1][1] == Board[2][2] == "O":
         print ("You lose!")
+        return True
     elif Board[0][2] == Board[1][1] == Board[2][0] == "O":
         print ("You lose!")
+        return True
+    return False
     
     
 while True:
@@ -112,8 +130,9 @@ while True:
             print ("Number taken, choose another please")
             continue
         Board[2][2] = "X"
-    win()
-
+        
+    if win():
+        break
     
     oponents_turn_choice = oponents_turn()
 
@@ -162,6 +181,8 @@ while True:
             oponents_turn
             continue
         Board[2][2] = "O"
-    loss()
 
+    if loss():
+        break
+        
     write()
