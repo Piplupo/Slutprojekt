@@ -81,6 +81,14 @@ def loss():
         print ("You lose!")
         return True
     return False
+
+def tie():
+    for i in range(3):
+        for j in range(3):
+            if Board[i][j] != "X" and Board[i][j] != "O":
+                return False
+    print("It's a tie :O")
+    return True
     
     
 while True:
@@ -184,5 +192,9 @@ while True:
 
     if loss():
         break
+    
+    if tie():
+        break
         
     write()
+    
